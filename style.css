@@ -1,0 +1,58 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	width: 100%;
+	height: 100%;
+	background-color: cornflowerblue;
+	font-family: 'Josefin Sans', sans-serif;
+	overflow: hidden;
+}
+.continer {
+	width: 100vw;
+	height: 100vh;
+	background-color: hsl(235, 21%, 11%);
+}
+.heder {
+	position: relative;
+}
+
+.heder .litt {
+	display: none;
+}
+.ni {
+	display: none;
+}
+.nii {
+	display: block;
+}
+.heder h1 {
+	position: absolute;
+	top: 20%;
+	left: 33%;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 12px;
+}
+.sun {
+	position: absolute;
+	top: 20%;
+	right: 33%;
+	cursor: pointer;
+}
+.sunn {
+	visibility: hidden;
+}
+
+.moon {
+	position: absolute;
+	top: 20%;
+	right: 33%;
+	cursor: pointer;
+	visibility: hidden;
+}
+.moonn {
+	visibility: visible;
+}
