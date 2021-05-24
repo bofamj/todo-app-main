@@ -1,3 +1,4 @@
+// varybels
 const sun = document.getElementById('sun');
 const moon = document.getElementById('moon');
 const lit = document.getElementById('lit');
@@ -7,10 +8,11 @@ const todo = document.getElementById('todo');
 const chec = document.getElementById('chec');
 const text = document.getElementById('text');
 const foter = document.getElementById('foter');
-const toto = document.querySelector('.toDo-lest');
+const conter = document.getElementById('conter');
+const toto = document.querySelector('.toDoLest');
 const toDev = document.querySelector('.toDo-dev');
 const lest = document.querySelector('.lest');
-
+//mornig fonctionalty
 sun.addEventListener('click', () => {
 	lit.classList.toggle('litt');
 	ni.classList.toggle('nii');
@@ -20,6 +22,7 @@ sun.addEventListener('click', () => {
 	sun.classList.toggle('sunn');
 	moon.classList.toggle('moonn');
 });
+//night fonctionalty
 moon.addEventListener('click', () => {
 	lit.classList.toggle('litt');
 	ni.classList.toggle('nii');
@@ -29,19 +32,20 @@ moon.addEventListener('click', () => {
 	sun.classList.toggle('sunn');
 	moon.classList.toggle('moonn');
 });
+// coblet todo evant
 toto.addEventListener('click', (e) => {
 	const item = e.target;
 	const todo = item.parentElement;
 	todo.classList.toggle('comb');
+	todo.classList.remove('dev');
 });
+// deleting the todo
 toto.addEventListener('dblclick', (e) => {
 	e.target.parentElement.classList.toggle('del');
 });
+// adding the todo lest event
 chec.addEventListener('click', todoFn);
-/*let va = todo.value;
-	text.innerHTML = va;
-	todo.value = '';*/
-
+// genirating the todo
 function todoFn(e) {
 	//e.preventDefault();
 	const newDev = document.createElement('div');
@@ -53,23 +57,43 @@ function todoFn(e) {
 	newLi.innerHTML = todo.value;
 	todo.value = '';
 }
+// filter butons evant lestener
 foter.addEventListener('click', filter);
+// filter button functionalty
 function filter(e) {
 	const todos = toto.childNodes;
-	todos.forEach(function(dev) {
+	todos.forEach(function(toto) {
 		switch (e.target.value) {
-			case 'all':
-				todo.style.display = 'flex';
+			case 'All':
+				//console.log('hy');
+				toto.style.display = 'flex';
+				break;
+			case 'Completed':
+				//console.log('yahhhh');
+				if (toto.classList.contains('comb')) {
+					//console.log('yahhhh');
+					toto.style.display = 'flex';
+				} else {
+					toto.style.display = 'none';
+				}
+				break;
+			case 'ClearCompleted':
+				if (toto.classList.contains('comb')) {
+					toto.remove();
+				}
 				break;
 			case 'Active':
-				//console.log('yahhhh');
-				if (todo.classList.contains('comb')) {
-					//console.log('yahhhh');
-					todo.style.display = 'flex';
+				if (toto.classList.contains('dev')) {
+					toto.style.display = 'flex';
 				} else {
-					todo.style.visibility = 'hidden';
+					toto.style.display = 'none';
 				}
 				break;
 		}
 	});
 }
+//let conte = toto.length;
+conte++;
+//console.log(toto.length);
+
+conter.innerHTML = conte;
